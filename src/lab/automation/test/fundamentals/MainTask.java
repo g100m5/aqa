@@ -8,7 +8,6 @@ public class MainTask {
 //  1. Приветствовать любого пользователя при вводе его имени через командную строку.
 
     private static void helloThereTaskOne() {
-
         Scanner scan = new Scanner(System.in);
         String name = scan.nextLine();
         System.out.println("Hello " + name);
@@ -17,7 +16,6 @@ public class MainTask {
 //  2. Отобразить в окне консоли аргументы командной строки в обратном порядке.
 
     private static void reverseTaskTwo(String[] args) {
-
         for (int i = args.length - 1; i >= 0; i--) {
             System.out.print(args[i] + " ");
         }
@@ -25,13 +23,12 @@ public class MainTask {
 
 //  3. Вывести заданное количество случайных чисел с переходом и без перехода на новую строку
 
-    private static void randomTaskTree(int length, String separator) {
-
+    private static void randomTaskThree(int length, String separator) {
         Random random = new Random();
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < length; i++) {
-            result += random.nextInt() + separator;
+            result.append(random.nextInt()).append(separator);
         }
         System.out.println(result);
     }
@@ -42,8 +39,8 @@ public class MainTask {
     private static void sumTaskFour(String[] args) {
         int sum = 0;
 
-        for (int i = 0; i < args.length; i++) {
-            sum += Integer.parseInt(args[i]);
+        for (String str : args) {
+            sum += Integer.parseInt(str);
         }
         System.out.println(sum);
     }
@@ -103,8 +100,8 @@ public class MainTask {
 
         helloThereTaskOne();
         reverseTaskTwo(args);
-        randomTaskTree(8, "\r\n");
-        randomTaskTree(8, " ");
+        randomTaskThree(8, "\r\n");
+        randomTaskThree(8, " ");
         sumTaskFour(args);
         monthsTaskFive(11);
     }
